@@ -59,17 +59,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       case DISCORD_MUTE:
         if (record->event.pressed) {
           SEND_STRING(SS_DOWN(X_SLCK) "m" SS_UP(X_SLCK));
-          //return false;
-        } else {
         }
         break;
+        return false;
       case DISCORD_DEAFEN:
         if (record->event.pressed) {
           SEND_STRING(SS_DOWN(X_SLCK) "d" SS_UP(X_SLCK) SS_TAP(X_SLCK));
-          //return false; break;
-      } else {
-      }
-      break;
+        }
+        break;
+        return false;
     }
     return true; // Process all other keycodes normally
   };
