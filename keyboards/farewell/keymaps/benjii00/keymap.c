@@ -14,65 +14,62 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
+#define _BL 0
+#define _FL 1
 
 enum discord_keycodes {
   DISCORD_MUTE = SAFE_RANGE,
-  DISCORD_DEAFEN
+  DISCORD_DEAFEN,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /* Base */
-    [0] = LAYOUT(
-
-    KC_MPRV, KC_MPLY, KC_MNXT,
-    KC_F20, KC_F21, KC_F22,
-    KC_MPLY, KC_MPLY, KC_MUTE
-
-    )
+  /* Base */
+  [_BL] = LAYOUT(
+    KC_MPLY,  LT(_FL, KC_MPLY), KC_MUTE,
+    KC_F20,   DISCORD_DEAFEN,   DISCORD_MUTE,
+    KC_MPRV,  KC_MPLY,          KC_MNXT
+  ),
+  [_FL] = LAYOUT(
+    _______, _______, _______,
+    _______, RESET,   _______,
+    _______, _______, _______
+  )
 };
-
-
-/*
-void matrix_init_user(void) {
-
-}
-
-void matrix_scan_user(void) {
-
-}
-
-bool led_update_user(led_t led_state) {
-    return true;
-}
-*/
 
 void encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) { /* First encoder */
-    if (!clockwise) {
-      tap_code(KC_DOWN);
+    if (clockwise) {
+      tap_code(KC_F23);
     } else {
-      tap_code(KC_UP);
+      tap_code(KC_F24);
     }
   } else if (index == 1) { /* Second encoder */
-    if (!clockwise) {
-      tap_code(KC_VOLU);
-    } else {
+    if (clockwise) {
       tap_code(KC_VOLD);
+    } else {
+      tap_code(KC_VOLU);
     }
   }
 }
 
-//Custom discord macros
+//Discord macros
 
-
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//   if (record->event.pressed) {
-//     switch (keycode) {
-//       case DISCORD_MUTE:
-//           SEND_STRING(SS_DOWN(X_F20) "m" SS_UP(X_F20));
-//           return false; break;
-//       case DISCORD_DEAFEN:
-//       }
-//     }
-//     return true; // Process all other keycodes normally
-//   };
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+      case DISCORD_MUTE:
+        if (record->event.pressed) {
+          SEND_STRING(SS_DOWN(X_SLCK) "m" SS_UP(X_SLCK));
+          //return false;
+        } else {
+        }
+        break;
+      case DISCORD_DEAFEN:
+        if (record->event.pressed) {
+          SEND_STRING(SS_DOWN(X_SLCK) "d" SS_UP(X_SLCK) SS_TAP(X_SLCK));
+          //return false; break;
+      } else {
+      }
+      break;
+    }
+    return true; // Process all other keycodes normally
+  };

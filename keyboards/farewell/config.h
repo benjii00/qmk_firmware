@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID 0xFEED
 #define PRODUCT_ID 0x0000
 #define DEVICE_VER 0x0001
-#define MANUFACTURER 
+#define MANUFACTURER
 #define PRODUCT Farewell Macropad
 #define DESCRIPTION Farewell Macropad
 
@@ -42,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
-#define MATRIX_ROW_PINS { B6, B2, B3 }
+#define MATRIX_ROW_PINS { B3, B2, B6 }
 #define MATRIX_COL_PINS { B5, B4, E6 }
 #define UNUSED_PINS
 #define ENCODERS_PAD_A {F5, F7 }
