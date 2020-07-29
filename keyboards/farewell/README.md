@@ -2,21 +2,19 @@
 
 # farewell
 
-# volarrow keymap
-
-|          |            |          |
-|----------|------------|----------|
-|   STOP   | PLAY/PAUSE | VOL/MUTE |
-| PREVIOUS |     UP     |   NEXT   |
-|   LEFT   |    DOWN    |   RIGHT  |
-|          |            |          |
+# benjii00's keymap
+|                       |                     |                   |
+|-----------------------|---------------------|-------------------|
+|  F23/24 / PLAY/PLAUSE |LAYER TOGGLE         |VOL +/- / MUTE     |
+|  F20                  |SCRLK+D              |SCRLK+M            |
+|  PREVIOUS             |PLAY/PAUSE           |NEXT               |
 
 
-![farewell(imgur.com image replace me!)
+[farewell macropad](https://github.com/a-chol/farewell_pcb)
 
 A short description of the keyboard/project
 
-* Keyboard Maintainer: [Simon](https://github.com/yourusername)
+* Keyboard Maintainer: [benjii00](https://github.com/benjii00)
 * Hardware Supported: The PCBs, controllers supported
 * Hardware Availability: Links to where you can find this hardware
 
