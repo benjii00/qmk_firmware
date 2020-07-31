@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LEFT, KC_DOWN, KC_RGHT,
     KC_MPRV, KC_UP, KC_MNXT,
     KC_MSTP, KC_MPLY, KC_MUTE
-	
+
     )
 };
 
