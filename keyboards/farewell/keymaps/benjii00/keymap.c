@@ -39,9 +39,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 void encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) { /* First encoder */
     if (!clockwise) {
-      tap_code(KC_F23);
+      tap_code(KC_F21);
     } else {
-      tap_code(KC_F24);
+      tap_code(KC_F22);
     }
   } else if (index == 1) { /* Second encoder */
     if (!clockwise) {
