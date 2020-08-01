@@ -3,12 +3,15 @@
 # farewell
 
 # benjii00's keymap
-|                       |                     |                   |
+|LAYER 0                |                     |                   |
 |-----------------------|---------------------|-------------------|
-|  F23/24 / PLAY/PLAUSE |LAYER TOGGLE         |VOL +/- / MUTE     |
-|  F20                  |SCRLK+D              |SCRLK+M            |
+|  F21/22 / PLAY/PLAUSE |LAYER TOGGLE (HOLD)  |VOL +/- / MUTE     |
+|  F20                  |SCRLK+LSHIFT         |SCRLK+LCRTL        |
 |  PREVIOUS             |PLAY/PAUSE           |NEXT               |
 
+|LAYER 1                |                     |                   |
+|-----------------------|---------------------|-------------------|
+|                       |                     |                   | |                       |RESET                |                   | |                       |                     |                   |
 
 [farewell macropad](https://github.com/a-chol/farewell_pcb)
 
